@@ -71,7 +71,7 @@ def scrape_youtube_channel(driver, channel_id):
     print(item)
 
     #insert data into mysql
-    connection = pymysql.connect(**config_local.get('mysql_dev'))
+    connection = pymysql.connect(**config_local.get('mysql_dev_remote'))
     #pymysql use context manager so it will close connection and cursor when it finished
     with connection:
         with connection.cursor() as cursor:
