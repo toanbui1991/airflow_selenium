@@ -13,6 +13,7 @@ from selenium_scripts.utils.mysql_utils import generate_upsert_statement
 
 def scrape_youtube_channel(driver, channel_id):
 
+    start = time.time()
     target_link = 'https://www.youtube.com/channel/{}/about'.format(channel_id)
 
     wait = WebDriverWait(driver,15)
@@ -86,5 +87,7 @@ def scrape_youtube_channel(driver, channel_id):
                 connection.rollback()
                 raise e
                 
-       
+    end = time.time()
+    period = end - start
+    print('time to finished: {}'.format(period))       
 
