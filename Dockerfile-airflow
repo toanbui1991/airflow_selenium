@@ -11,7 +11,10 @@ RUN pip install docker && \
     pip install selenium && \
     pip install bs4 && \
     pip install lxml && \
-    pip install boto3
+    pip install boto3 && \
+    pip install PyMySQL && \
+    pip install numpy && \
+    pip install pandas
 
 RUN groupadd --gid 999 docker \
    && usermod -aG docker airflow 
